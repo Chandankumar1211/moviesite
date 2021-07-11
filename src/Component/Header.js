@@ -22,7 +22,7 @@ const Header = ({ onSearch, searchValue, title }) => {
                     </>
                     }
                 </Col>
-                <Col xs={3} sm={3} md={6} lg={6} className="home-icon">
+                <Col xs={3} sm={3} md={6} lg={6} className="home-icon cursor-pnt">
                     <img src={HomeImg} alt="No Image" onClick={onHomeClick} />
                 </Col>
             </Row>
