@@ -12,25 +12,28 @@ const MovieDatail = (props) => {
     const movieId = match.params.id;
     const { poster_path = '', release_date = '', title = '', runtime = 0, overview = '' } = movieDetail;
 
-    useEffect(async () => {
-        let baseUrl = `https://api.themoviedb.org/3/movie/${movieId}`;
-        let params = { api_key: 'aedaf37b2e5efcb5e791bdd5963aaeb6' };
-        try {
-            let response = await axios.get(baseUrl, { params: params });
-            let castResponse = await axios.get(baseUrl + '/credits', { params: params })
-            if (response && response.data) {
-                setMovieDetail(response.data);
-            }
-            if (castResponse && castResponse.data && castResponse.data) {
-                let directorArr = castResponse.data.crew.filter(e => e.department.toLowerCase() == "directing") || [];
-                if (directorArr.length) {
-                    setDirector(directorArr[0].name);
+    useEffect(() => {
+        const fetchData = async () => {
+            let baseUrl = `https://api.themoviedb.org/3/movie/${movieId}`;
+            let params = { api_key: 'aedaf37b2e5efcb5e791bdd5963aaeb6' };
+            try {
+                let response = await axios.get(baseUrl, { params: params });
+                let castResponse = await axios.get(baseUrl + '/credits', { params: params })
+                if (response && response.data) {
+                    setMovieDetail(response.data);
                 }
-                setCastDetail(castResponse.data.cast);
+                if (castResponse && castResponse.data && castResponse.data) {
+                    let directorArr = castResponse.data.crew.filter(e => e.department.toLowerCase() === "directing") || [];
+                    if (directorArr.length) {
+                        setDirector(directorArr[0].name);
+                    }
+                    setCastDetail(castResponse.data.cast);
+                }
+            } catch (ex) {
+                return { error: "" };
             }
-        } catch (ex) {
-            return { error: "" };
         }
+        fetchData();
     }, [])
 
     return (

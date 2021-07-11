@@ -19,23 +19,26 @@ const MovieList = () => {
     );
 
     //get movie list
-    useEffect(async () => {
-        let baseUrl = 'https://api.themoviedb.org/3/';
-        let params = { api_key: 'aedaf37b2e5efcb5e791bdd5963aaeb6' };
-        try {
-            if (searchValue) {
-                baseUrl = baseUrl + 'search/movie';
-                params = Object.assign(params, { query: searchValue })
-            } else {
-                baseUrl = baseUrl + 'movie/upcoming/'
+    useEffect(() => {
+        const fetchData = async () => {
+            let baseUrl = 'https://api.themoviedb.org/3/';
+            let params = { api_key: 'aedaf37b2e5efcb5e791bdd5963aaeb6' };
+            try {
+                if (searchValue) {
+                    baseUrl = baseUrl + 'search/movie';
+                    params = Object.assign(params, { query: searchValue })
+                } else {
+                    baseUrl = baseUrl + 'movie/upcoming/'
+                }
+                let response = await axios.get(baseUrl, { params: params });
+                if (response && response.data && response.data.results) {
+                    setMovieList(response.data.results)
+                }
+            } catch (ex) {
+                return { error: "" };
             }
-            let response = await axios.get(baseUrl, { params: params });
-            if (response && response.data && response.data.results) {
-                setMovieList(response.data.results)
-            }
-        } catch (ex) {
-            return { error: "" };
         }
+        fetchData();
     }, [searchValue])
 
     const onMovieDetailClick = (id) => {
