@@ -4,7 +4,7 @@ This project contains: (gsynergy-movies-app)
 1. Home Page - Movie List
 2. Detail page - Movie Detail Page
 
-# Building gsynergy-movies-app
+# Building movies-app
 
 1. Open project folder
 2. Open command prompt and run 'npm install' - this will include node modules into project
