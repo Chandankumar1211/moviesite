@@ -1,6 +1,6 @@
 # Overview
 
-This project contains: (gsynergy-movies-app)
+This project contains: (movies-app)
 1. Home Page - Movie List
 2. Detail page - Movie Detail Page
 
