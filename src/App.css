@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.row {
+  --bs-gutter-x: 0rem;
+}
+
+.hearder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.header-bar {
+  padding: 1em;
+  box-shadow: 0px 0px 0px -3px rgb(0 0 0 / 10%), 0px 1px 2px 1px rgb(0 0 0 / 10%), 0px 1px 1px 3px rgb(0 0 0 / 10%);
+  background: #fff;
+}
+
+.search-box,
+.search-box:focus {
+  border: 0;
+  background: #d8d8d8;
+  font-size: 20px;
+  padding-left: 2em;
+}
+
+.search-icon {
+  position: absolute;
+  margin-top: 0.75em;
+  margin-left: 0.5em;
+}
+
+.home-icon {
+  margin-top: 0.75em;
+  text-align: right;
+}
+
+.pad-7 {
+  padding: 0.5em;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.card-text {
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.body-cont {
+  margin-top: 4.7em;
+}
+
+.text-rt {
+  text-align: right;
+}
+
+.movie-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-body-min-ht {
+  min-height: 7em;
+}
+
+.cursor-pnt {
+  cursor: pointer;
+}
+
+.header-title {
+  font-size: 20px;
+  color: #4a4a4a;
+}
+
+.pdl-1 {
+  padding-left: 1em;
+}
+
+.movie-detail-title {
+  font-size: 24px;
+  color: #4a4a4a;
+}
+
+.bold-font {
+  color: #232323;
+  font-weight: 500;
+}
+
+.mrb-7 {
+  margin-bottom: 0.5em;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
