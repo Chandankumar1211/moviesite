@@ -40,7 +40,7 @@ const MovieDatail = (props) => {
                 <Col sm={4} md={3} lg={2}>
                     <Card>
                         <CardImg src={poster_path ? `https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}` : (NoImg)} alt="No Images Available"
-                            height="378" width="auto" className="cursor-pnt" />
+                            height="378" width="auto" />
                     </Card>
                 </Col>
                 <Col sm={8} md={9} lg={10} className="pdl-1">
